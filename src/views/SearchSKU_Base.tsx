@@ -5,6 +5,7 @@ import { useStore } from '../store'
 import { AttrList, SkuList } from './type';
 function SearchSKU(){
   const {state:{attrList,skuList},dispatch} = useStore();
+  console.log([...attrList])
   console.log(skuList)
   // 选择商品选项
   const handleCheck = (rowIndex:number,colIndex:number)=>{

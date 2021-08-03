@@ -221,7 +221,7 @@ export function createSkuList(attrList:AttrList,prevSkuList:SkuList = []):SkuLis
         label:attrItem.attrLabel,
         value:option.value
       });
-      if(rowIndex === attrList.length - 1){
+      if(rowIndex === attrList.length - 1){//判断如果是最后一层，那就是组合完整了，将结果收集到全局的容器里
         id ++;
         const key = curOptions.map(({value})=>value).join('_'); // 将sku的选项值用'_'连接起来组成一个key
         if(prevSkuMap[key]){// 如果改变前后的sku key相同，复用sku数据,避免数据覆盖

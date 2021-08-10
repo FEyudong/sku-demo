@@ -28,8 +28,8 @@ function AddModal(props:Props){
   },[modalVisible,form])
 
   const onFinish = ({name}:{name:string})=>{
-    onChange(name)
     setIsModalVisible(false)
+    onChange(name)
   }
 
   return  <>

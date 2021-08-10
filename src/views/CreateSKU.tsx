@@ -47,7 +47,7 @@ function CreateSKU() {
   // 选项-删除
   const handleDeleteCol = (rowIndex:number,colIndex:number)=>{
     const newAttrList = produce(attrList,(draft)=>{
-      draft[rowIndex].options.splice(colIndex,1)
+     draft[rowIndex].options.splice(colIndex,1)
     })
     dispatch({
       type:"setAttrList",
@@ -117,7 +117,7 @@ function CreateSKU() {
         {attrList.map((attrItem,rowIndex) => (
           <Form.Item label={attrItem.attrLabel} key={attrItem.attrLabel}>
             <Space>
-              {attrItem.options.map((option,colIndex) =><Tag key={option.value} closable onClose={()=>handleDeleteCol(rowIndex,colIndex)}>{option.value}</Tag>)}
+              {attrItem.options.map((option,colIndex) =><Tag key={option.value + colIndex} closable onClose={()=>handleDeleteCol(rowIndex,colIndex)}>{option.value}</Tag>)}
               <AddOptions onChange={(val)=>handleAddCol(val,rowIndex)} />
             </Space>
           </Form.Item>
